@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Slip</title>
+    <!-- Add any CSS styles you need for the table here -->
+</head>
+<body>
+    <h1>Checkout Slip</h1>
+    <table style="border-collapse: collapse; width: 100%; text-align: center;">
+        <thead style="background-color: #125688; color: white;">
+            <th style="padding: 10px;">Item Name</th>
+            <th style="padding: 10px;">Quantity</th>
+            <th style="padding: 10px;">Price</th>
+            <!-- Add more table headers as needed -->
+        </thead>
+        <tbody>
+            {% for item in checkout_items %}
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ item.name }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ item.quantity }}</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">{{ item.price }}</td>
+                    <!-- Add more table cells as needed -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

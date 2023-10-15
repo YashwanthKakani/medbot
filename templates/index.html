@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Medication Management System</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1628771065518-0d82f1938462?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVkaWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80');
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #125688;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #125688;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0d457e;
+        }
+
+        #output {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medication Management System</h1>
+    
+        <form action="#" method="post" id="medication-form">
+            <label for="operation">Select an option:</label>
+            <select name="operation" id="operation">
+                <option value="1">Adding to Cart</option>
+                <option value="2">Expired Stock</option>
+                <option value="3">Display Stock</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    
+        <div id="output">
+            <!-- Output from Python code will be displayed here -->
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript for handling form submission and redirecting
+        document.querySelector("#medication-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const operation = document.querySelector("#operation").value;
+
+            if (operation === "1") {
+                // Redirect to 'page 2.html' for "Adding to Cart"
+                window.location.href = '/page2';
+            } else if (operation === "2") {
+                // Redirect to the Python script for "Expired Stock"
+                window.location.href = '/expired';
+            }else if (operation === "3") {
+                // Redirect to the Python script for "Expired Stock"
+                window.location.href = '/display-sql-table';
+            }
+        });
+    </script>
+</body>
+</html>
